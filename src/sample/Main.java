@@ -18,7 +18,6 @@ public class Main extends Application {
         Group root = new Group() ;
         primaryStage.setTitle("LapinDeDouady");
         primaryStage.setScene(new Scene(root, 300, 150));
-        //Modelisation modelisation = new Modelisation(primaryStage, width, height);
         Acceuil acceuil = new Acceuil(primaryStage, width, height);
         root.getChildren().add(acceuil);
         primaryStage.show();

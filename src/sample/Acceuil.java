@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -18,15 +19,15 @@ public class Acceuil extends Parent {
 
         //Labels
         Label t_c = new Label("Entrez c :");
-        Label t_m = new Label("Entrez m :");
+        Label t_m = new Label("Entrez M :");
 
         t_c.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 20));
         t_m.setFont(Font.font("Verdana", FontWeight.SEMI_BOLD, 20));
 
-        t_c.setLayoutX(10);
+        t_c.setLayoutX(20);
         t_c.setLayoutY(10);
 
-        t_m.setLayoutX(10);
+        t_m.setLayoutX(20);
         t_m.setLayoutY(50);
 
         this.getChildren().add(t_c);
@@ -37,7 +38,7 @@ public class Acceuil extends Parent {
         ComboBox cb_m = new ComboBox();
 
         cb_c.getItems().addAll("1","2");
-        cb_m.getItems().addAll("a","b");
+        cb_m.getItems().addAll("1","2");
 
         cb_c.getSelectionModel().selectFirst();
         cb_m.getSelectionModel().selectFirst();
@@ -62,16 +63,19 @@ public class Acceuil extends Parent {
 
         b_lancer.setPrefSize(90,30);
 
-        /*Stage newWindow = new Stage();
-
         b_lancer.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event) {
-                primaryStage.show();
-                newWindow.close() ;
+                Stage nouvelle_fenetre=new Stage();
+                Modelisation modelisation = new Modelisation(primaryStage,nouvelle_fenetre,width,height,Integer.valueOf((String) cb_c.getValue()),(Integer.valueOf((String) cb_m.getValue())));
+                Scene nouvelle_scene = new Scene(modelisation,width,height);
 
+                nouvelle_fenetre.setScene(nouvelle_scene);
+
+                nouvelle_fenetre.show();
+                primaryStage.close();
             }
-        });*/
+        });
 
         this.getChildren().add(b_lancer);
 

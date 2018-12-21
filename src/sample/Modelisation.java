@@ -14,10 +14,14 @@ public class Modelisation extends Parent {
 
     private int width;
     private int height;
+    private int c;
+    private int m;
 
-    public Modelisation(Stage primatyStage, int width, int height) {
+    public Modelisation(Stage primatyStage, Stage cette_fenetre, int width, int height, int c, int m) {
         this.width = width;
         this.height = height;
+        this.c = c;
+        this.m = m;
         Image i = randomPixels(this.width,this.height);
         ImageView imageView = new ImageView(i);
         imageView.setPreserveRatio(true);
