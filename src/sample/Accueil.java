@@ -48,12 +48,12 @@ public class Accueil extends Parent {
 
         //Combo box
         //ComboBox cb_c = new ComboBox();
-        TextField tf_c_r = new TextField();
-        TextField tf_c_i = new TextField();
+        TextField tf_c_r = new TextField("-0.123");
+        TextField tf_c_i = new TextField("-0.745");
         ComboBox cb_m = new ComboBox();
 
         //cb_c.getItems().addAll("1","2");
-        cb_m.getItems().addAll("1","2");
+        cb_m.getItems().addAll("10","30","50");
 
         //cb_c.getSelectionModel().selectFirst();
         cb_m.getSelectionModel().selectFirst();
