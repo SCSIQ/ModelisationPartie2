@@ -14,10 +14,10 @@ public class Modelisation extends Parent {
 
     private int width;
     private int height;
-    private int c;
+    private Complex c;
     private int m;
 
-    public Modelisation(Stage primatyStage, Stage cette_fenetre, int width, int height, int c, int m) {
+    public Modelisation(Stage primatyStage, Stage cette_fenetre, int width, int height, Complex c, int m) {
         this.width = width;
         this.height = height;
         this.c = c;
@@ -44,7 +44,7 @@ public class Modelisation extends Parent {
         return img;
     }
 
-    private Image juliaSet(int width, int height, int c, int m) {
+    private Image juliaSet(int width, int height, Complex c, int m) {
         WritableImage img = new WritableImage(width, height);
         PixelWriter pw  = img.getPixelWriter();
 
@@ -52,4 +52,6 @@ public class Modelisation extends Parent {
 
         return img;
     }
+
+
 }
