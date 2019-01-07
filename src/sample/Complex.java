@@ -123,9 +123,4 @@ public class Complex {
         return Objects.hash(re, im);
     }
 
-    // sample client for testing
-    public static void main(String[] args) {
-
-    }
-
 }
