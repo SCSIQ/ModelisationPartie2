@@ -13,9 +13,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-public class Acceuil extends Parent {
+public class Accueil extends Parent {
 
-    public Acceuil(Stage primaryStage, int width, int height) {
+    public Accueil(Stage primaryStage, int width, int height) {
 
         //Labels
         Label t_c = new Label("Entrez c :");
