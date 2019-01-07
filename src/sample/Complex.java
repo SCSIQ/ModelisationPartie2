@@ -5,11 +5,14 @@ import java.util.Objects;
 public class Complex {
     private final double re;   // the real part
     private final double im;   // the imaginary part
+    public double x;
+    public double y;
+
 
     // create a new object with the given real and imaginary parts
-    public Complex(double real, double imag) {
-        re = real;
-        im = imag;
+    public Complex(double re, double im) {
+        this.re = re;
+        this.im = im;
     }
 
     // return a string representation of the invoking Complex object
