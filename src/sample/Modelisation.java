@@ -23,23 +23,33 @@ public class Modelisation extends Parent {
         this.c = c;
         this.m = m;
         Image i = randomPixels(this.width,this.height);
+        //Image i = juliaSet(this.width, this.height, this.c, this.m);
         ImageView imageView = new ImageView(i);
         imageView.setPreserveRatio(true);
         this.getChildren().add(imageView);
     }
 
-    public Image randomPixels(int width, int height) {
+    private Image randomPixels(int width, int height) {
         WritableImage img = new WritableImage(width, height);
         PixelWriter pw  = img.getPixelWriter();
         Random rnd = new Random();
         for (int y = 0 ; y < height ; y++) {
             for (int x = 0 ; x < width ; x++) {
-                // Do the pixel manipulation
+                //do the pixel manipulation (ramdom RGB)
                 pw.setColor(x, y, Color.rgb(rnd.nextInt(255),
                         rnd.nextInt(255),
                         rnd.nextInt(255)));
             }
         }
+        return img;
+    }
+
+    private Image juliaSet(int width, int height, int c, int m) {
+        WritableImage img = new WritableImage(width, height);
+        PixelWriter pw  = img.getPixelWriter();
+
+        //write code here
+
         return img;
     }
 }
