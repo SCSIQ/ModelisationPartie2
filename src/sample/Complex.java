@@ -8,11 +8,12 @@ public class Complex {
     public double x;
     public double y;
 
-
     // create a new object with the given real and imaginary parts
     public Complex(double re, double im) {
         this.re = re;
         this.im = im;
+        this.x=re;
+        this.y=im;
     }
 
     // return a string representation of the invoking Complex object
