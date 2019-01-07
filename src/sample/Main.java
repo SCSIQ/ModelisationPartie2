@@ -14,7 +14,7 @@ public class Main extends Application {
         int height = 600;
         Group root = new Group() ;
         primaryStage.setTitle("LapinDeDouady");
-        primaryStage.setScene(new Scene(root, 300, 150));
+        primaryStage.setScene(new Scene(root, 500, 150));
         Accueil accueil = new Accueil(primaryStage, width, height);
         root.getChildren().add(accueil);
         primaryStage.show();
