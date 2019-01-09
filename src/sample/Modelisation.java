@@ -45,6 +45,8 @@ public class Modelisation extends Parent {
         PixelWriter pw  = img.getPixelWriter();
 
         int mTemp = 0;
+
+
         while (mTemp <= this.m) {
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
@@ -77,7 +79,7 @@ public class Modelisation extends Parent {
 
                         //vect fin : vert
                         int R_fin = 0;
-                        int G_fin = 0;
+                        int G_fin = 255;
                         int B_fin = 0;
 
                         //vect diff
@@ -85,13 +87,20 @@ public class Modelisation extends Parent {
                         int G_diff = G_fin - G_ini;
                         int B_diff = B_fin - B_ini;
 
-                        double azerty = Math.log((mTemp/this.m)+1);
-                        double qwerty = azerty/Math.log(2.0);
+                        int coef = this.m;
+                        double azerty = Math.log((((double)mTemp)/this.m)*coef+1);
+                        double qwerty = azerty/Math.log(coef+1);
 
                         //vect couleur
-                        int R_coul = (int) qwerty * R_diff + R_ini;
-                        int G_coul = (int) qwerty * G_diff + G_ini;
-                        int B_coul = (int) qwerty * B_diff + B_ini;
+                        int R_coul = (int) (qwerty * R_diff + R_ini);
+                        int G_coul = (int) (qwerty * G_diff + G_ini);
+                        int B_coul = (int) (qwerty * B_diff + B_ini);
+
+                        if(mTemp>=this.m) {
+                            R_coul = 0;
+                            G_coul=0;
+                            B_coul=0;
+                        }
 
                         pw.setColor(x, y, Color.rgb(R_coul,G_coul,B_coul));
 

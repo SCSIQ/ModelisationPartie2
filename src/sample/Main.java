@@ -10,8 +10,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        int width = 1000;
-        int height = 600;
+        int width = 1024;
+        int height = 768;
         Group root = new Group() ;
         primaryStage.setTitle("LapinDeDouady");
         primaryStage.setScene(new Scene(root, 500, 150));
