@@ -53,10 +53,11 @@ public class Accueil extends Parent {
         ComboBox cb_m = new ComboBox();
 
         //cb_c.getItems().addAll("1","2");
-        cb_m.getItems().addAll("10","30","50");
+        cb_m.getItems().addAll("10","100","200","300");
 
         //cb_c.getSelectionModel().selectFirst();
         cb_m.getSelectionModel().selectFirst();
+        cb_m.getSelectionModel().selectNext();
 
         //cb_c.setLayoutX(150);
         //cb_c.setLayoutY(10);

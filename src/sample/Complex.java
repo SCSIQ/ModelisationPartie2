@@ -58,6 +58,14 @@ public class Complex {
         return new Complex(real, imag);
     }
 
+    public Complex square() {
+        //System.out.println("av : "+this.toString());
+        double real = this.re * this.re - this.im * this.im;
+        double imag = 2 * this.re * this.im;
+        //System.out.println("ap : "+real+" + "+imag+"i");
+        return new Complex(real, imag);
+    }
+
     // return a new object whose value is (this * alpha)
     public Complex scale(double alpha) {
         return new Complex(alpha * re, alpha * im);
