@@ -127,7 +127,7 @@ public class Complex {
         return Objects.hash(re, im);
     }
 
-    public double mod2() {
+    public double mod() {
         return Math.sqrt(this.re*this.re+this.im*this.im);
     }
 
