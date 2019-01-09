@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 public class Accueil extends Parent {
 
-    public Accueil(Stage primaryStage, double width, double height) {
+    public Accueil(Stage primaryStage, int width, int height) {
 
         //Labels
         Label t_c = new Label("Entrez c :");

@@ -12,12 +12,12 @@ import java.util.Random;
 
 public class Modelisation extends Parent {
 
-    private double width;
-    private double height;
+    private int width;
+    private int height;
     private Complex c;
     private int m;
 
-    public Modelisation(Stage primatyStage, Stage cette_fenetre, double width, double height, Complex c, int m) {
+    public Modelisation(Stage primatyStage, Stage cette_fenetre, int width, int height, Complex c, int m) {
         this.width = width;
         this.height = height;
         this.c = c;
@@ -29,7 +29,7 @@ public class Modelisation extends Parent {
     }
 
     private Image randomPixels() {
-        WritableImage img = new WritableImage((int)width, (int)height);
+        WritableImage img = new WritableImage(width, height);
         PixelWriter pw  = img.getPixelWriter();
         Random rnd = new Random();
         for (int y = 0 ; y < height ; y++) {
@@ -41,7 +41,7 @@ public class Modelisation extends Parent {
     }
 
     private Image juliaSet() {
-        WritableImage img = new WritableImage((int)width, (int)height);
+        WritableImage img = new WritableImage(width, height);
         PixelWriter pw  = img.getPixelWriter();
 
         int mTemp = 0;
@@ -49,8 +49,8 @@ public class Modelisation extends Parent {
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
 
-                    double _y = y - height / 2;
-                    double _x = x - width / 2;
+                    int _y = y - height / 2;
+                    int _x = x - width / 2;
                     Complex z = new Complex(_x/150.0, _y/150.0);
                     boolean inZ = true;
                     int a = 0;
