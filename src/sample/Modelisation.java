@@ -1,6 +1,9 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelWriter;
@@ -8,6 +11,7 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.util.Random;
 
 public class Modelisation extends Parent {
@@ -26,18 +30,18 @@ public class Modelisation extends Parent {
         ImageView imageView = new ImageView(i);
         imageView.setPreserveRatio(true);
         this.getChildren().add(imageView);
-    }
 
-    private Image randomPixels() {
-        WritableImage img = new WritableImage(width, height);
-        PixelWriter pw  = img.getPixelWriter();
-        Random rnd = new Random();
-        for (int y = 0 ; y < height ; y++) {
-            for (int x = 0 ; x < width ; x++) {
-                pw.setColor(x, y, Color.rgb(rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255)));
+        Button bt = new Button("Nouvelle fractale");
+
+        bt.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                primatyStage.show();
+                cette_fenetre.close();
             }
-        }
-        return img;
+        });
+
+        this.getChildren().add(bt);
     }
 
     private Image juliaSet() {
@@ -45,7 +49,6 @@ public class Modelisation extends Parent {
         PixelWriter pw  = img.getPixelWriter();
 
         int mTemp = 0;
-
 
         while (mTemp <= this.m) {
             for (int y = 0; y < height; y++) {
@@ -88,13 +91,13 @@ public class Modelisation extends Parent {
                         int B_diff = B_fin - B_ini;
 
                         int coef = this.m;
-                        double azerty = Math.log((((double)mTemp)/this.m)*coef+1);
-                        double qwerty = azerty/Math.log(coef+1);
+                        double coloration = Math.log((((double)mTemp)/this.m)*coef+1);
+                        double Lapincoloré = coloration/Math.log(coef+1);
 
                         //vect couleur
-                        int R_coul = (int) (qwerty * R_diff + R_ini);
-                        int G_coul = (int) (qwerty * G_diff + G_ini);
-                        int B_coul = (int) (qwerty * B_diff + B_ini);
+                        int R_coul = (int) (Lapincoloré * R_diff + R_ini);
+                        int G_coul = (int) (Lapincoloré * G_diff + G_ini);
+                        int B_coul = (int) (Lapincoloré * B_diff + B_ini);
 
                         if(mTemp>=this.m) {
                             R_coul = 0;

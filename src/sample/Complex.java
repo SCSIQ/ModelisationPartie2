@@ -5,15 +5,12 @@ import java.util.Objects;
 public class Complex {
     private final double re;   // the real part
     private final double im;   // the imaginary part
-    public double x;
-    public double y;
+
 
     // create a new object with the given real and imaginary parts
     public Complex(double re, double im) {
         this.re = re;
         this.im = im;
-        this.x=re;
-        this.y=im;
     }
 
     // return a string representation of the invoking Complex object
@@ -22,6 +19,22 @@ public class Complex {
         if (re == 0) return im + "i";
         if (im <  0) return re + " - " + (-im) + "i";
         return re + " + " + im + "i";
+    }
+
+    // a static version of plus
+    public static Complex plus(Complex a, Complex b) {
+        double real = a.re + b.re;
+        double imag = a.im + b.im;
+        Complex sum = new Complex(real, imag);
+        return sum;
+    }
+
+    // See Section 3.3.
+    public boolean equals(Object x) {
+        if (x == null) return false;
+        if (this.getClass() != x.getClass()) return false;
+        Complex that = (Complex) x;
+        return (this.re == that.re) && (this.im == that.im);
     }
 
     // return abs/modulus/magnitude
@@ -110,24 +123,6 @@ public class Complex {
     // return a new Complex object whose value is the complex tangent of this
     public Complex tan() {
         return sin().divides(cos());
-    }
-
-
-
-    // a static version of plus
-    public static Complex plus(Complex a, Complex b) {
-        double real = a.re + b.re;
-        double imag = a.im + b.im;
-        Complex sum = new Complex(real, imag);
-        return sum;
-    }
-
-    // See Section 3.3.
-    public boolean equals(Object x) {
-        if (x == null) return false;
-        if (this.getClass() != x.getClass()) return false;
-        Complex that = (Complex) x;
-        return (this.re == that.re) && (this.im == that.im);
     }
 
     // See Section 3.3.
